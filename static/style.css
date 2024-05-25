@@ -1,0 +1,64 @@
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+        .container {
+            padding: 20px 30px;
+            background-image: url('./background.png');
+            border-radius: 10px;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #007BFF;
+        }
+        label {
+            font-size: 1.2em;
+            color: #555;
+        }
+        .input-container {
+            position: relative;
+            margin: 10px 0;
+        }
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .mic-icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #007BFF;
+        }
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        #generated_text {
+            margin-top: 20px;
+            font-size: 1.1em;
+            color: #333;
+        }
+ 
