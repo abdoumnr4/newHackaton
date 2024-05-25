@@ -4,16 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text Generation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+        .container {
+            background: #fff;
+            padding: 20px 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #007BFF;
+        }
+        label {
+            font-size: 1.2em;
+            color: #555;
+        }
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        #generated_text {
+            margin-top: 20px;
+            font-size: 1.1em;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-    <h1>Text Generation</h1>
-    <form id="textForm" action="generate_text" method="get">
-        <label for="input_text">Input Text:</label><br>
-        <input type="text" id="input_text" name="input_text"><br><br>
-        <input type="submit" value="Generate">
-    </form>
-    <div id="generated_text"></div>
-
+    <div class="container">
+        <h1>Text Generation</h1>
+        <form id="textForm" action="generate_text" method="get">
+            <label for="input_text">Input Text:</label><br>
+            <input type="text" id="input_text" name="input_text"><br><br>
+            <input type="submit" value="Generate">
+        </form>
+        <div id="generated_text"></div>
+    </div>
     <script>
         document.getElementById('textForm').addEventListener('submit', async function(event) {
             event.preventDefault();
