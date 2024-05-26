@@ -4,35 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text Generation</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" href="{{ url_for('static', filename='css/styles.css') }}">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
     <div class="container">
+        <h1 style = "text-align : center;">Ana mriid !</h1>
         <form id="textForm" action="generate_text" method="get">
             <div class="input-container">
-                <input type="text" id="input_text" name="input_text">
-                <form id="textForm" action="audio_text" method="get">
-                    <button><i class="fas fa-microphone mic-icon" id="micIcon"></i></button>
-                </form>
+                <input type="text" id="input_text" name="input_text" placeholder="Type your text here...">
             </div>
             <input type="submit" value="Generate">
         </form>
-        <div id="generated_text"></div>
+        <div id="generated_text">{{generated_text}}</div>
+        <form id="textForm" action="generate_text" method="post">
+            <button style = "cursor:pointer;width:50px;height:50px ;background-color : white; border: None " id="micButton"><i class="fas fa-microphone mic-icon"></i></button>
+        </form>
     </div>
+    
     <script>
         document.getElementById('textForm').addEventListener('submit', async function(event) {
             event.preventDefault();
             const inputText = document.getElementById('input_text').value;
-            const response = await fetch(`/generate_text?input_text=${inputText}`);
+            const response = await fetch(/generate_text?input_text=${inputText});
             const data = await response.json();
             document.getElementById('generated_text').innerText = data.generated_text;
         });
 
-        const micIcon = document.getElementById('micIcon');
+        const micButton = document.getElementById('micButton');
         const inputText = document.getElementById('input_text');
 
-        micIcon.addEventListener('click', () => {
+        micButton.addEventListener('click', () => {
             const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
             recognition.lang = 'en-US';
             recognition.start();
