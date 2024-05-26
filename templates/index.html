@@ -3,31 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/style.css">
     <title>Text Generation</title>
 </head>
 <body>
-    
-    <form id="textForm" action="generate_text" method="post">
-        <h1>عافاك سي طبيب ممكن تشوف شنو عندي</h1>
-        <label for="input_text">Input Text:</label>
-        <input type="text" id="input_text" name="input_text">
+    <h1>Text Generation</h1>
+    <form id="textForm" action="generate_text" method="get">
+        <label for="input_text">Input Text:</label><br>
+        <input type="text" id="input_text" name="input_text"><br><br>
         <input type="submit" value="Generate">
-        <div id="generated_text"></div>
     </form>
-    
+    <div id="generated_text"></div>
 
     <script>
         document.getElementById('textForm').addEventListener('submit', async function(event) {
             event.preventDefault();
             const inputText = document.getElementById('input_text').value;
-            const response = await fetch('/generate_text', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ input_text: inputText })
-            });
+            const response = await fetch(`/generate_text?input_text=${inputText}`);
             const data = await response.json();
             document.getElementById('generated_text').innerText = data.generated_text;
         });
