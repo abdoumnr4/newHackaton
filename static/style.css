@@ -1,87 +1,74 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f0f2f5;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+    background-color: #121212;
+    color: #e0e0e0;
     margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 h1 {
-    color: #333;
-    margin-bottom: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #ff6f61;
 }
 
-.container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 10px;
+form {
+    background-color: #1e1e1e;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
-.input-container {
-    display: flex;
-    align-items: center;
+label, input[type="text"], input[type="submit"] {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
 }
 
-.input-container input[type="text"] {
-    width: 300px;
-    padding: 10px;
-    border: 1px solid #ccc;
+label {
+    font-size: 1rem;
+    color: #ff6f61;
+}
+
+input[type="text"] {
+    padding: 12px;
+    border: none;
     border-radius: 5px;
-    margin-right: 10px;
+    background-color: #333;
+    color: #e0e0e0;
+    font-size: 1rem;
 }
 
 input[type="submit"] {
-    padding: 10px 20px;
+    padding: 12px;
     border: none;
     border-radius: 5px;
-    background-color: #007bff;
+    background-color: #ff6f61;
     color: #fff;
+    font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 input[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #ff8a65;
 }
 
 #generated_text {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: white;
-    border-radius: 5px;
-    width: 100%;
+   
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #e0e0e0;
     text-align: center;
-}
-
-.mic-icon {
-    font-size: 1.5em;
-    cursor: pointer;
-    color: #007bff;
-}
-
-.mic-icon:hover {
-    color: #0056b3;
-}
-
-form#audioForm {
-    display: flex;
-    align-items: center;
-}
-
-form#audioForm button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    margin-left: 10px;
-}
-
-form#textForm, form#audioForm {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
 }
